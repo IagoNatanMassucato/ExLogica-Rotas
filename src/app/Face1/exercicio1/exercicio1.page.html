@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Exercício 1</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-text color="black">
+    <h3>Algoritmo que lê o nome de um aluno e 5 notas.No final mostra o nome do aluno e uma mensagem "APROVADO" se a média for maior ou igual a 5 e "REPROVADO" se a média for menor que 5.</h3>
+  </ion-text>
+
+  <ion-item>
+    <ion-label position="floating">Digite seu nome</ion-label>
+    <ion-input type="string" [(ngModel)]="nome"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Digite a 1º nota</ion-label>
+    <ion-input type="number" [(ngModel)]="n1"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Digite a 2º nota</ion-label>
+    <ion-input type="number" [(ngModel)]="n2"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Digite a 3º nota</ion-label>
+    <ion-input type="number" [(ngModel)]="n3"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Digite a 4º nota</ion-label>
+    <ion-input type="number" [(ngModel)]="n4"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Digite a 5º nota</ion-label>
+    <ion-input type="number" [(ngModel)]="n5"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="somar()" color="warning" shape="round">Calcular
+  </ion-button>
+
+  <ion-text color="black">
+    <h3 *ngIf="media">O(a) {{nome}} ficou com a média {{media}}, então está {{mensagem}} !!!</h3>
+  </ion-text>
+
+  <ion-fab-button [routerLink]="'/home'" expand="block" shape="round">
+    Voltar
+  </ion-fab-button>
+  
+</ion-content>
+

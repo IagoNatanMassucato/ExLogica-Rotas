@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Exercicio 3</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-text color="black">
+    <h3> Algoritmo que permita ao usuário digitar: a descrição do produto (nome), a quantidade adquirida e o preço unitário.O algoritmo deverá calcular e exibir o total (total = quantidade adquirida * preço unitário), o desconto e o total a pagar (total a pagar = total - desconto), sabendo-se que:</h3>
+    <h3>- Se quantidade <= 5 o desconto será de 2%</h3>
+    <h3>- Se quantidade > 5 e quantidade <=10 o desconto será de 3%</h3>
+    <h3>- Se quantidade > 10 o desconto será de 5%.</h3>
+
+  </ion-text>
+
+  <ion-item>
+    <ion-label position="floating">Digite o nome do produto</ion-label>
+    <ion-input type="string" [(ngModel)]="nome"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Digite o preço do produto</ion-label>
+    <ion-input type="number" [(ngModel)]="vlr"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Digite a quantidade do produto</ion-label>
+    <ion-input type="number" [(ngModel)]="qtd"></ion-input>
+  </ion-item>
+
+
+  <ion-button (click)="calcular()" color="warning" shape="round">Calcular
+  </ion-button>
+
+  <ion-text color="black">
+    <h3 *ngIf="total">Você comprou {{qtd}} {{nome}} no preço de R$ {{vlr}}, então o total é R$ {{total}}</h3>
+  </ion-text>
+
+  <ion-fab-button [routerLink]="'/home'" expand="block" shape="round">
+    Voltar
+  </ion-fab-button>
+
+</ion-content>

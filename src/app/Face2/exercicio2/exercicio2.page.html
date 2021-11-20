@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Exercicio 2</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-text color="black">
+    <h3>Algoritmo que permite o usuário digitar o ano de nascimento. O sistema deverá exibir uma mensagem que diga se ela poderá ou não votar este ano.
+    </h3>
+  </ion-text>
+
+  <ion-item>
+    <ion-label position="floating">Digite o ano em que nasceu para calcular se pode votar</ion-label>
+    <ion-input type="number" [(ngModel)]="nsc"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="calcular()" color="warning" shape="round">Calcular
+  </ion-button>
+
+  <ion-text color="black">
+    <h3 *ngIf="mensagem">{{mensagem}} !!!</h3>
+  </ion-text>
+
+  <ion-fab-button [routerLink]="'/home'" expand="block" shape="round">
+    Voltar
+  </ion-fab-button>
+  
+</ion-content>

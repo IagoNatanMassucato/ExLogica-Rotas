@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Exercicio3</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-text color="black">
+    <h3>Sistema que calcula o salário com mais o acréscimo em porcentagem.</h3>
+  </ion-text>
+
+  <ion-item>
+    <ion-label position="floating">Digite o seu salário</ion-label>
+    <ion-input type="number" [(ngModel)]="salario"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Digite o número que será calculado em porcentagem</ion-label>
+    <ion-input type="number" [(ngModel)]="aumento"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="calcular()" color="warning" shape="round">Calcular
+  </ion-button>
+
+  <ion-text color="black">
+    <h3 *ngIf="final">Seu salário é de R${{salario}}, com o aumento de {{aumento}}% seu salário fica com R${{final}}.</h3>
+  </ion-text>
+
+  <ion-fab-button [routerLink]="'/home'" expand="block" shape="round">
+    Voltar
+  </ion-fab-button>
+  
+</ion-content>

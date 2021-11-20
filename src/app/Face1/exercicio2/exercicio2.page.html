@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Exercicio 2</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  [fullscreen]="true">
+
+  <ion-text color="black">
+    <h3>Um banco concederá um crédito especial aos seus clientes, variável com o saldo médio no último ano.O sistema mostra uma mensagem informando o saldo médio e o valor do crédito.</h3>
+  </ion-text>
+  
+  <ion-item>
+    <ion-label position="floating">Digite o saldo médio</ion-label>
+    <ion-input type="number" [(ngModel)]="saldo"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="calcular()" color="warning" shape="round">Calcular
+  </ion-button>
+
+  <ion-text color="black">
+    <h3 *ngIf="credito">O saldo médio é de R${{saldo}}, portanto o valor do crédito fica em R${{credito}}. </h3>
+  </ion-text>
+
+  <ion-fab-button [routerLink]="'/home'" expand="block" shape="round">
+    Voltar
+  </ion-fab-button>
+  
+</ion-content>
